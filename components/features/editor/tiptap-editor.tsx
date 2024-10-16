@@ -1,7 +1,7 @@
 'use client'
 
-import React, {useState, useCallback} from 'react'
-import {EditorContent, useEditor} from '@tiptap/react'
+import React, { useState, useCallback } from 'react'
+import { EditorContent, useEditor } from '@tiptap/react'
 import Document from '@tiptap/extension-document'
 import Paragraph from '@tiptap/extension-paragraph'
 import Text from '@tiptap/extension-text'
@@ -18,9 +18,9 @@ import Bold from '@tiptap/extension-bold'
 import Italic from '@tiptap/extension-italic'
 import CharacterCount from '@tiptap/extension-character-count'
 import Youtube from '@tiptap/extension-youtube'
-import {Button} from "@/components/ui/button"
-import {Input} from "@/components/ui/input"
-import {useToast} from "@/hooks/use-toast"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { useToast } from "@/hooks/use-toast"
 import Toolbar from './toolbar'
 import EmbedsPlugin from './embeds-plugin'
 import ImageDialog from './image-dialog'
@@ -37,7 +37,7 @@ export default function Component({
     const [videoDialogOpen, setVideoDialogOpen] = useState(false)
     const [socialDialogOpen, setSocialDialogOpen] = useState(false)
     const [title, setTitle] = useState(initialTitle)
-    const {toast} = useToast()
+    const { toast } = useToast()
 
     const editor = useEditor({
         extensions: [
@@ -72,7 +72,7 @@ export default function Component({
                 modestBranding: true,
             }),
         ],
-        content: initialContent,
+        content: initialContent || undefined,
     })
 
     const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,7 +82,7 @@ export default function Component({
     const handlePost = useCallback(() => {
         if (editor) {
             const content = editor.getHTML()
-            console.log('Posted content:', {title, content})
+            console.log('Posted content:', { title, content })
 
             toast({
                 title: "Post successful",
@@ -108,8 +108,8 @@ export default function Component({
                             className="text-4xl font-bold mb-4 border-none p-0 focus-visible:ring-0"
                             aria-label="Edit title"
                         />
-                        <Toolbar editor={editor}/>
-                        <EditorContent editor={editor} className="prose max-w-full mt-4"/>
+                        <Toolbar editor={editor} />
+                        <EditorContent editor={editor} className="prose max-w-full mt-4" />
                         <div className="flex justify-between items-center mt-4">
                             <EmbedsPlugin
                                 setImageDialogOpen={setImageDialogOpen}
@@ -128,22 +128,22 @@ export default function Component({
                 <ResponsiveDialog
                     open={imageDialogOpen}
                     onOpenChange={setImageDialogOpen}
-                    desktopContent={<ImageDialog editor={editor} setOpen={setImageDialogOpen}/>}
-                    mobileContent={<ImageDialog editor={editor} setOpen={setImageDialogOpen}/>}
+                    desktopContent={<ImageDialog editor={editor} setOpen={setImageDialogOpen} />}
+                    mobileContent={<ImageDialog editor={editor} setOpen={setImageDialogOpen} />}
                     title="Embed"
                 />
                 <ResponsiveDialog
                     open={videoDialogOpen}
                     onOpenChange={setVideoDialogOpen}
-                    desktopContent={<VideoDialog editor={editor} setOpen={setVideoDialogOpen}/>}
-                    mobileContent={<VideoDialog editor={editor} setOpen={setVideoDialogOpen}/>}
+                    desktopContent={<VideoDialog editor={editor} setOpen={setVideoDialogOpen} />}
+                    mobileContent={<VideoDialog editor={editor} setOpen={setVideoDialogOpen} />}
                     title="Embed"
                 />
                 <ResponsiveDialog
                     open={socialDialogOpen}
                     onOpenChange={setSocialDialogOpen}
-                    desktopContent={<SocialDialog editor={editor} setOpen={setSocialDialogOpen}/>}
-                    mobileContent={<SocialDialog editor={editor} setOpen={setSocialDialogOpen}/>}
+                    desktopContent={<SocialDialog editor={editor} setOpen={setSocialDialogOpen} />}
+                    mobileContent={<SocialDialog editor={editor} setOpen={setSocialDialogOpen} />}
                     title="Embed"
                 />
             </div>
