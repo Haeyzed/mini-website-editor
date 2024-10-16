@@ -83,6 +83,7 @@ export default function Component({
         if (editor) {
             const content = editor.getHTML()
             console.log('Posted content:', {title, content})
+
             toast({
                 title: "Post successful",
                 description: `Title: ${title}\nContent: ${content.substring(0, 100)}...`,
