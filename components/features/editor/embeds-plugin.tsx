@@ -59,7 +59,7 @@ export default function Component({ setImageDialogOpen, setVideoDialogOpen, setS
                     <div className="p-4 h-full flex flex-col">
                         <h3 className="text-sm mb-2 text-[#3a3a3a]">EMBEDS</h3>
                         <div className="space-y-2 flex-grow">
-                            {embedOptions.map((option, index) => (
+                            {embedOptions.map((option) => (
                                 <React.Fragment key={option.title}>
                                     <button
                                         className="w-full text-left focus:outline-none group py-1 px-2 rounded-md hover:bg-[#F7FCF8]"
