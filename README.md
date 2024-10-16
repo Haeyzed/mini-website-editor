@@ -29,18 +29,18 @@ Check out the live demo of the Mini Website Editor: [https://mini-website-editor
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/mini-website-editor.git
+   git clone https://github.com/Haeyzed/mini-website-editor.git
    cd mini-website-editor
    ```
 
 2. Install dependencies:
    ```
-   npm install
+   bun install
    ```
 
 3. Run the development server:
    ```
-   npm run dev
+   bun run dev
    ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the editor.
@@ -69,4 +69,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-If you have any questions or suggestions, please open an issue on GitHub or contact the maintainer at [your-email@example.com](mailto:your-email@example.com).
+If you have any questions or suggestions, please open an issue on GitHub or contact the maintainer at [muibi.azeezabolade@gmail.com](mailto:muibi.azeezabolade@gmail.com).
