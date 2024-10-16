@@ -4,7 +4,7 @@ A powerful and user-friendly web-based editor for creating and editing content f
 
 ## Live Demo
 
-Check out the live demo of the Mini Website Editor: [https://mini-website-editor.vercel.app](https://mini-website-editor.vercel.app)
+Check out the live demo of the Mini Website Editor: [https://mini-website-editor-seven.vercel.app](https://mini-website-editor-seven.vercel.app)
 
 ## Features
 
